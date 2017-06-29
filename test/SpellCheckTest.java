@@ -24,15 +24,7 @@ public class SpellCheckTest {
     /** The number of words in the default dictionary */
     private static final int DICTIONARY_SIZE = 25144;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-
-	}
-
-	@Test
+    @Test
 	public void test() {
 		fail("Not yet implemented");
 	}

@@ -141,7 +141,7 @@ public class Dictionary {
     private String bucketPut(int h, int k, String v) {
         LinkedList<Word> bucket = table[h];
         if (bucket == null)
-            bucket = table[h] = new LinkedList<Word>();
+            bucket = table[h] = new LinkedList<>();
         int oldSize = bucket.size();
         for (Word w : bucket) {
             if (k == w.getKey()) {
