@@ -1,43 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
 # Common
-*~*
-tmp/
-*.tmp
-*.bak
-*.log
-
 ## Generated files
 bin/
-gen/
-
 ## Java
-.mtj.tmp/
-*.jar
-*.war
-*.ear
-hs_err_pid*
-
 ## Eclipse
 #.project
-*.pydevproject
-.metadata
-*.swp
-*~.nib
-.settings/
-.loadpath
-.externalToolBuilders/
-*.launch
-.cproject
-.classpath
-.factorypath
-.buildpath
-.target
-.texlipse
-
 ## IntelliJ
 # Covers JetBrains IDEs (IntelliJ, Android Studio, PyCharm, RubyMine, PhpStorm, AppCode, CLion
 *.iml
-/out/
 .idea/
 ## If you remove the above rule, at least ignore the following:
 ## User-specific stuff:

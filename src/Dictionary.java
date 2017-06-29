@@ -124,8 +124,7 @@ public class Dictionary {
         for (Word w : bucket) {
             if (w != null)          // Increment probe count when compared to a word.
                 probeCount++;
-            if (k == w.getKey())
-                return w.getValue();
+            if (w != null && k == w.getKey()) return w.getValue();
         }
         return null;
     }
