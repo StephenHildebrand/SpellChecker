@@ -48,7 +48,7 @@ public class Dictionary {
      * @param word the word to look up
      * @return the calculated key
      */
-    public int hashCode(String word) {
+    int hashCode(String word) {
         int k = 0;
         for (int i = 0; i < word.length(); i++) {
             k = (k << 5) | (k >>> 27);      // 5-bit cyclic shift of the running sum.
@@ -63,7 +63,7 @@ public class Dictionary {
      * @param key the key whose associated value is to be returned
      * @return the associated value, or null if no such entry exists
      */
-    public String get(int key) {
+    String get(int key) {
         lookupCount++;
         return bucketGet(hashValue(key), key);
     }
@@ -75,7 +75,7 @@ public class Dictionary {
      * @param key the key whose entry is to be removed from the map
      * @return the previous value associated with the removed key, or null if no such entry exists
      */
-    public String remove(int key) {
+    String remove(int key) {
         return bucketRemove(hashValue(key), key);
     }
 
@@ -89,7 +89,7 @@ public class Dictionary {
      * @param value value to be associated with the specified key
      * @return the previous value associated with the key (or null, if no such entry)
      */
-    public String put(int key, String value) {
+    String put(int key, String value) {
         return bucketPut(hashValue(key), key, value);
     }
 
@@ -105,7 +105,7 @@ public class Dictionary {
      *
      * @return the number of dictionary entries
      */
-    public int size() {
+    int size() {
         return n;
     }
 
@@ -122,7 +122,7 @@ public class Dictionary {
         LinkedList<Word> bucket = table[h];
         if (bucket == null) return null;
         for (Word w : bucket) {
-            if (w != null)          // increment probe count when compared to a word
+            if (w != null)          // Increment probe count when compared to a word.
                 probeCount++;
             if (k == w.getKey())
                 return w.getValue();
@@ -152,7 +152,7 @@ public class Dictionary {
             }
         }
         bucket.add(new Word(k, v));
-        n += (bucket.size() - oldSize);   // size may have increased
+        n += (bucket.size() - oldSize);   // Size may have increased.
         return null;
     }
 
@@ -175,7 +175,7 @@ public class Dictionary {
                 bucket.remove(w);
             }
         }
-        n -= (oldSize - bucket.size());   // size may have decreased
+        n -= (oldSize - bucket.size());   // Size may have decreased.
         return answer;
     }
 
@@ -199,7 +199,7 @@ public class Dictionary {
      *
      * @return the number of times a text word is compared to a table word
      */
-    public int getProbeCount() {
+    int getProbeCount() {
         return probeCount;
     }
 
@@ -208,7 +208,7 @@ public class Dictionary {
      *
      * @return the number of times a text word is compared to a table word
      */
-    public int getLookupCount() {
+    int getLookupCount() {
         return lookupCount;
     }
 
@@ -219,10 +219,10 @@ public class Dictionary {
     private static class Word implements Comparable<Word> {
         private int key;
         /** the key to be stored */
-        private String value;       /** the hashed value associated with key */
+        private String value;       /* The hashed value associated with key. */
 
         /** Constructor for a new Word. */
-        public Word(int key, String value) {
+        Word(int key, String value) {
             this.key = key;
             this.value = value;
         }
@@ -232,7 +232,7 @@ public class Dictionary {
          *
          * @return the key for this Word
          */
-        public int getKey() {
+        int getKey() {
             return key;
         }
 
@@ -241,7 +241,7 @@ public class Dictionary {
          *
          * @return the associated word
          */
-        public String getValue() {
+        String getValue() {
             return value;
         }
 
