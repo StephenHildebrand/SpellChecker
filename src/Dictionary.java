@@ -234,14 +234,14 @@ public class Dictionary {
             return key;
         }
 
-        /**
-         * Sets the key (word).
-         *
-         * @param key the key to set for this Word
-         */
-        public void setKey(int key) {
-            this.key = key;
-        }
+//        /**
+//         * Sets the key (word).
+//         *
+//         * @param key the key to set for this Word
+//         */
+//        public void setKey(int key) {
+//            this.key = key;
+//        }
 
         /**
          * Returns the associated word as a string.
