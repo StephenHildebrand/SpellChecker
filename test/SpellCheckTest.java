@@ -1,8 +1,3 @@
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.File;
 
 /**
@@ -11,6 +6,8 @@ import java.io.File;
  * Test cases for the SpellCheck.java class.
  */
 public class SpellCheckTest {
+    /** The number of words in the default dictionary */
+    private static final int DICTIONARY_SIZE = 25144;
     /** Input text file to check the spelling of */
 	private File in1 = new File("orig_01.txt");
     /** Input text file to check the spelling of */
@@ -21,12 +18,5 @@ public class SpellCheckTest {
     private String input[] = {"add", "abounds", "crunch", "founder", "igloo", "searched", "words"};
     /** Array of keys from words */
     private int keys[] = new int[7];
-    /** The number of words in the default dictionary */
-    private static final int DICTIONARY_SIZE = 25144;
-
-    @Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }
