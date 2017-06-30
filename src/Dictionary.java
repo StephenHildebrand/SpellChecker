@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -178,19 +177,19 @@ public class Dictionary {
         return answer;
     }
 
-    /**
-     * Returns an iterable collection of all key-value entries of the map.
-     *
-     * @return iterable collection of the map's entries
-     */
-    public Iterable<Word> wordSet() {
-        ArrayList<Word> buffer = new ArrayList<>();
-        for (int h = 0; h < capacity; h++)
-            if (table[h] != null)
-                for (Word w : buffer)
-                    buffer.add(w);
-        return buffer;
-    }
+//    /**
+//     * Returns an iterable collection of all key-value entries of the map.
+//     *
+//     * @return iterable collection of the map's entries
+//     */
+//    public Iterable<Word> wordSet() {
+//        ArrayList<Word> buffer = new ArrayList<>();
+//        for (int h = 0; h < capacity; h++)
+//            if (table[h] != null)
+//                for (Word w : buffer)
+//                    buffer.add(w);
+//        return buffer;
+//    }
 
     /**
      * Returns the total number of times a text word is compared to a word
@@ -236,15 +235,6 @@ public class Dictionary {
         }
 
         /**
-         * Returns the associated word as a string.
-         *
-         * @return the associated word
-         */
-        String getValue() {
-            return value;
-        }
-
-        /**
          * Sets the key (word).
          *
          * @param key the key to set for this Word
@@ -254,16 +244,25 @@ public class Dictionary {
         }
 
         /**
-         * Sets the associated value, then returns the previously associated value.
+         * Returns the associated word as a string.
          *
-         * @param v the string for this Word
-         * @return the previously associated value (may be null)
+         * @return the associated word
          */
-        public String setValue(String v) {
-            String old = this.value;
-            this.value = v;
-            return old;
+        String getValue() {
+            return value;
         }
+
+//        /**
+//         * Sets the associated value, then returns the previously associated value.
+//         *
+//         * @param v the string for this Word
+//         * @return the previously associated value (may be null)
+//         */
+//        public String setValue(String v) {
+//            String old = this.value;
+//            this.value = v;
+//            return old;
+//        }
 
         /** Returns a string representation of this Word. */
         public String toString() {
