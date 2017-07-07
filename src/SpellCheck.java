@@ -10,12 +10,12 @@ import java.util.regex.Pattern;
  * @version 2017/06/29
  */
 public class SpellCheck {
-    /** Dictionary hash table of words. */
-    private static Dictionary dict;
     /** Number of words in the default dictionary. */
     private static final int DICT_SIZE = 25144;
     /** Error exit status code of 1. */
     private static final int EXIT_FAILURE = 1;
+    /** Dictionary hash table of words. */
+    private static Dictionary dict;
 
     /**
      * The main method. Begins by reading a list of edges from a text file.
@@ -69,6 +69,7 @@ public class SpellCheck {
                 outfile = new PrintStream(new File(outFileName));
                 outfile.printf("Possible misspelled words:\n");
                 // For each line of the text file.
+
                 while (ts.hasNextLine()) {
                     String line = ts.nextLine();                    // Next line of text.
                     Pattern pat = Pattern.compile("[\\w']+");       // Regex pattern.
@@ -156,6 +157,12 @@ public class SpellCheck {
             // Suffix = "es".
             if (!found && word.endsWith("es")) {
                 word = word.substring(0, word.length() - 2);
+                key = dict.hashCode(word);
+                found = word.equals(dict.get(key));
+            }
+            // Suffix = "ies".
+            if (!found && word.endsWith("ies")) {
+                word = word.substring(0, word.length() - 3) + "y";
                 key = dict.hashCode(word);
                 found = word.equals(dict.get(key));
             }

@@ -1,6 +1,6 @@
 # SpellCheck
 ## Overview 
-A spelling checker that creates and uses a hash table. It is made up of two parts: 
+Application for checking word spelling implemented using a hash table. It is made up of two parts: 
   1. Building the hash table.
   2. Scanning the text for spelling errors using the hash table. 
 

@@ -1,7 +1,7 @@
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Stephen Hildebrand
@@ -9,6 +9,8 @@ import org.junit.Test;
  * Test class for Dictionary.java.
  */
 public class DictionaryTest {
+    /** The number of words in the default dictionary */
+    private static final int DICTIONARY_SIZE = 25144;
     /** Dictionary hash table of Words */
     private Dictionary d;
     /** Sample word input */
@@ -17,8 +19,6 @@ public class DictionaryTest {
     /** Array of keys from words */
     @SuppressWarnings("CanBeFinal")
     private int keys[] = new int[7];
-    /** The number of words in the default dictionary */
-    private static final int DICTIONARY_SIZE = 25144;
 
 	/**
 	 * @throws java.lang.Exception If the dictionary is unable to be set up as expected.
